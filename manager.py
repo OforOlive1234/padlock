@@ -2,7 +2,7 @@ import hashlib
 from tkinter.constants import BOTH, CENTER, END, LEFT, RIGHT, VERTICAL, Y
 from generator import PasswordGenerator
 from database import init_database
-from tkinter import Button, Canvas, Entry, Frame, Label, Scrollbar, Tk
+from tkinter import Button, Canvas, Entry, Frame, Label, PhotoImage, Scrollbar, Tk
 from functools import partial
 from vault import VaultMethods
 
@@ -16,6 +16,9 @@ class PasswordManager:
         self.window.title("Password Manager")
         self.window.geometry("650x350")
         self.window.configure(bg="white")
+
+        self.photo = PhotoImage(file = 'icon.png')
+        self.window.iconphoto(False, self.photo)
 
     def welcome_new_user(self):
         self.window.geometry("450x200")
